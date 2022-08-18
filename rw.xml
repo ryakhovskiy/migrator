@@ -1,0 +1,78 @@
+<settings>
+
+    <connection>
+        <!--
+            http://www.orafaq.com/wiki/JDBC
+            "jdbc:oracle:thin:[USER/PASSWORD]@[HOST][:PORT]:SID" or "jdbc:oracle:thin:[USER/PASSWORD]@//[HOST][:PORT]/SERVICE"
+        -->
+        <source_database driver="oracle.jdbc.OracleDriver" url="jdbc:oracle:thin:system/sapinvent@192.168.0.135:1521:ORCL1"/>
+        <destination_database driver="com.sap.db.jdbc.Driver" url="jdbc:sap://ld9493.wdf.sap.corp:30115?user=SYSTEM&amp;password=QaZ123456"/>
+    </connection>
+
+    <actions>
+        <!--<tables fetch_size="50" batch_size="1000"
+                commit_size="10000" writers="3" queue_capacity="100"
+                source_open_escape_symbol='"' source_close_escape_symbol='"'
+                dest_open_escape_symbol='"' dest_close_escape_symbol='"'>
+            <table source_name="ASF2.FDC_ACCESS_LOG" dest_name="FORS_FMONITOR.FDC_ACCESS_LOG" thread_prefix="al" />
+
+            <table source_name="ASF2.FDC_IDENTITY_CARD" dest_name="FORS_FMONITOR.FDC_IDENTITY_CARD" thread_prefix="ic" />
+
+            <table source_name="ASF2.FDC_OBJECT" dest_name="FORS_FMONITOR.FDC_OBJECT" thread_prefix="obj" />
+
+            <table source_name="ASF2.FDC_OBJECT_LST" dest_name="FORS_FMONITOR.FDC_OBJECT_LST" thread_prefix="objl" />
+
+            <table source_name='ASF2."FDC_OPERATION_LST"' dest_name='FORS_FMONITOR."FDC_OPERATION_LST"' thread_prefix="opl" />
+
+            <table source_name='ASF2."FDC_PERSON"' dest_name='FORS_FMONITOR."FDC_PERSON"' thread_prefix="p" />
+
+            <table source_name='ASF2."FDC_USER"' dest_name='FORS_FMONITOR."FDC_USER"' thread_prefix="u" />  -->
+
+        <tables>
+            <table source_name="RZHD_PTEST.ROUTES" dest_name="ROUTES"
+                   fetch_size="50" batch_size="1000"
+                   commit_size="10000" writers="20" queue_capacity="1000" thread_prefix="ROUTES"
+                   source_open_escape_symbol='"' source_close_escape_symbol='"'
+                   dest_open_escape_symbol='' dest_close_escape_symbol=''>
+                <column source_name="train_id" dest_name="train_id" />
+                <column source_name="station_number" dest_name="station_number" />
+                <column source_name="station_id" dest_name="station_id" />
+                <column source_name="dt_arrival" dest_name="dt_arrival" />
+                <column source_name="dt_departure" dest_name="dt_departure" />
+                <column source_name="seating_enabled" dest_name="seating_enabled" />
+                <column source_name="physical_train_number" dest_name="physical_train_number" />
+                <column source_name="seating_station_number" dest_name="seating_station_number" />
+                <column source_name="distance" dest_name="distance" />
+                <column source_name="last_station_number" dest_name="last_station_number" />
+            </table>
+        </tables>
+
+        <!--
+        <tables>
+            <table source_name="RZHD_PTEST.TRAINS" dest_name="I068332.TRAINS" fetch_size="50" batch_size="1000"
+               commit_size="10000" writers="7" queue_capacity="1000" thread_prefix="trains"
+               source_open_escape_symbol='"' source_close_escape_symbol='"'
+               dest_open_escape_symbol='"' dest_close_escape_symbol='"'>
+                <column source_name="train_id" dest_name="train_id" />
+                <column source_name="train_number" dest_name="train_number"/>
+                <column source_name="train_category_id" dest_name="train_category_id"/>
+                <column source_name="loc_type_id" dest_name="loc_type_id"/>
+            </table>
+        </tables>
+        <queries>
+            <query writers="2" queue_capacity="1000" thread_prefix="operations">
+                <source type="select" fetch_size="50">
+                    <sql>select "operation_id" from RZHD_DEV.OPERATIONS</sql>
+                </source>
+                <destination type="insert" batch_size="1000" commit_size="10000">
+                    <sql>insert into RYAKHOVSKIY_K.OPERATIONS ("operation_id", "operation_type_id") values (?, 1)</sql>
+                    <arguments>
+                        <argument argIndex="1" value_source="operation_id" />
+                    </arguments>
+                </destination>
+            </query>
+        </queries>
+        -->
+    </actions>
+
+</settings>

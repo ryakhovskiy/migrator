@@ -1,0 +1,30 @@
+<settings>
+
+    <connection>
+        <database driver="com.sap.db.jdbc.Driver" url="jdbc:sap://ld9493.wdf.sap.corp:30215?user=SYSTEM&amp;password=QaZ123456" />
+        <jms broker_url="tcp://ld9493:61616" />
+    </connection>
+
+    <actions>
+        <tables>
+            <table name="RYAKHOVSKIY_K.CAPACITY" queue_topic="capacity" commit_size="10000" jms_readers="2" sql_writers="10" queue_capacity="1000">
+                <column name='"train_id"' type="string" value_source="train_id"/>
+                <column name='"carriage_number"' type="int" value_source="carriage_number"/>
+                <column name='"seat_number"' type="int" value_source="seat_number"/>
+                <column name='"sum_route_mask1"' type="int" value_source="sum_route_mask1"/>
+                <column name='"sum_route_mask2"' type="int" value_source="sum_route_mask2"/>
+                <column name='"sum_route_mask3"' type="int" value_source="sum_route_mask3"/>
+                <column name='"sum_route_mask4"' type="int" value_source="sum_route_mask4"/>
+            </table>
+        </tables>
+        <queries>
+            <query type="insert" queue_topic="operations" commit_size="10000" jms_readers="2" sql_writers="10" queue_capacity="1000">
+                <sql>insert into RYAKHOVSKIY_K.OPERATIONS ("operation_id", "operation_type_id") values (?, 10)</sql>
+                <arguments>
+                    <argument argIndex="1" type="int" value_source="operation_id" />
+                </arguments>
+            </query>
+        </queries>
+    </actions>
+
+</settings>

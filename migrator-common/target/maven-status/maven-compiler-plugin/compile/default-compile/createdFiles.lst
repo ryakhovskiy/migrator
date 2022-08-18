@@ -1,0 +1,11 @@
+org\kr\db\migrator\exceptions\ReadSettingsException.class
+org\kr\db\migrator\settings\XmlReaderBase.class
+org\kr\db\migrator\settings\ConnectionInfo.class
+org\kr\db\migrator\settings\ConnectionInfo$JmsConnectionInfo.class
+org\kr\db\migrator\settings\QueryBase$QueryType.class
+org\kr\db\migrator\settings\ConnectionInfo$DatabaseConnectionInfo.class
+org\kr\db\migrator\settings\QueryBase.class
+org\kr\db\migrator\exceptions\MigratorException.class
+org\kr\db\migrator\NamedThreadFactory.class
+org\kr\db\migrator\settings\SettingsBase.class
+org\kr\db\migrator\settings\XmlSettingsReaderBase.class

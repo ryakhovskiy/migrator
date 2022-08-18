@@ -1,2 +1,2 @@
 # migrator
-Migrate Data from one DB to another
+Data Migrator from one JDBC DB to another JDBC DB

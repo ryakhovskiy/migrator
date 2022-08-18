@@ -1,0 +1,28 @@
+<settings>
+
+    <connection>
+        <database driver="com.sap.db.jdbc.Driver" url="jdbc:sap://ld9493.wdf.sap.corp:30115?user=SYSTEM&amp;password=QaZ123456"/>
+        <!--<jms broker_url="tcp://ld9493.wdf.sap.corp:61616" />-->
+        <jms broker_url="tcp://ld9493:61616" />
+    </connection>
+
+    <actions>
+        <tables>
+            <table name="RZHD_PTEST.CAPACITY_MASK256" fetch_size="50" batch_size="1000" queue_topic="capacity" queue_capacity="1000" thread_name="CAPACITY_THREAD">
+                <column name='"train_id"'/>
+                <column name='"carriage_number"'/>
+                <column name='"seat_number"'/>
+                <column name='"sum_route_mask1"'/>
+                <column name='"sum_route_mask2"'/>
+                <column name='"sum_route_mask3"'/>
+                <column name='"sum_route_mask4"'/>
+            </table>
+        </tables>
+        <queries>
+            <query type="select" fetch_size="50" batch_size="1000" queue_topic="operations" queue_capacity="1000" thread_name="OPERATIONS_THREAD">
+                <sql>select "operation_id" from RYAKHOVSKIY_K.OPERATIONS</sql>
+            </query>
+        </queries>
+    </actions>
+
+</settings>

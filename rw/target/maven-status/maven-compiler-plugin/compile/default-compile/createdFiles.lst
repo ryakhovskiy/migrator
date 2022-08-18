@@ -1,0 +1,15 @@
+org\kr\db\migrator\rw\settings\TableSettings.class
+org\kr\db\migrator\rw\SqlWriter.class
+org\kr\db\migrator\rw\settings\QueryBuilder.class
+org\kr\db\migrator\rw\SqlReader.class
+org\kr\db\migrator\rw\settings\ConnectionInfo$DatabaseConnectionInfo.class
+org\kr\db\migrator\rw\settings\Settings.class
+org\kr\db\migrator\rw\settings\ConnectionInfo.class
+org\kr\db\migrator\rw\settings\QueryRead.class
+org\kr\db\migrator\rw\RWWorker.class
+org\kr\db\migrator\rw\settings\QueryBase$QueryType.class
+org\kr\db\migrator\rw\settings\Action.class
+org\kr\db\migrator\rw\settings\SettingsReader.class
+org\kr\db\migrator\rw\settings\QueryBase.class
+org\kr\db\migrator\rw\RWMain.class
+org\kr\db\migrator\rw\settings\QueryWrite.class

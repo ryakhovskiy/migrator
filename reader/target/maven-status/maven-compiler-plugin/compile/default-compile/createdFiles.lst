@@ -1,0 +1,8 @@
+org\kr\db\migrator\reader\settings\SettingsReader.class
+org\kr\db\migrator\reader\ReaderMain.class
+org\kr\db\migrator\reader\settings\Settings.class
+org\kr\db\migrator\reader\JmsSender.class
+org\kr\db\migrator\reader\ReaderWorker$SqlReaderThreadFactory.class
+org\kr\db\migrator\reader\SqlReader.class
+org\kr\db\migrator\reader\ReaderWorker.class
+org\kr\db\migrator\reader\settings\Settings$Query.class

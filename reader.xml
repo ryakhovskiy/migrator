@@ -1,7 +1,7 @@
 <settings>
 
     <connection>
-        <database driver="com.sap.db.jdbc.Driver" url="jdbc:sap://ld9493.wdf.sap.corp:30115?user=SYSTEM&amp;password=QaZ123456"/>
+        <database driver="com.sap.db.jdbc.Driver" url="jdbc:sap://ld9493:30115?user=SYSTEM&amp;password=123456"/>
         <!--<jms broker_url="tcp://ld9493.wdf.sap.corp:61616" />-->
         <jms broker_url="tcp://ld9493:61616" />
     </connection>

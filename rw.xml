@@ -6,7 +6,7 @@
             "jdbc:oracle:thin:[USER/PASSWORD]@[HOST][:PORT]:SID" or "jdbc:oracle:thin:[USER/PASSWORD]@//[HOST][:PORT]/SERVICE"
         -->
         <source_database driver="oracle.jdbc.OracleDriver" url="jdbc:oracle:thin:system/sapinvent@192.168.0.135:1521:ORCL1"/>
-        <destination_database driver="com.sap.db.jdbc.Driver" url="jdbc:sap://ld9493.wdf.sap.corp:30115?user=SYSTEM&amp;password=QaZ123456"/>
+        <destination_database driver="com.sap.db.jdbc.Driver" url="jdbc:sap://ld9493:30115?user=SYSTEM&amp;password=123456"/>
     </connection>
 
     <actions>
